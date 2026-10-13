@@ -357,7 +357,7 @@ class IncDecValueCommand(sublime_plugin.TextCommand):
             self.replace(str(result) + match2, tmp_reg)
 
             pos = self.view.sel()[self.region_index]
-            if orig_int >= 0 and result < 0 and pos.a == tmp_reg.a and old_pos.a == old_pos.b:
+            if result < 0 and pos.a == tmp_reg.a and old_pos.a == old_pos.b:
                 self.view.sel().subtract(tmp_reg)
                 self.view.sel().add(sublime.Region(tmp_reg.a+1, tmp_reg.a+1))
 
