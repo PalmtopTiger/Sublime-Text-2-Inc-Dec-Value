@@ -493,7 +493,7 @@ class IncDecValueCommand(sublime_plugin.TextCommand):
         # restore the initial position of the cursor
         offset = len(text) - old_len
 
-        self.view.sel().subtract(sublime.Region(region.end() + offset, region.end() + offset))
+        self.view.sel().subtract(sublime.Region(old_pos.begin() + offset, old_pos.begin() + offset))
 
         offset_start = old_pos.begin() + offset
         offset_end = old_pos.end() + offset
